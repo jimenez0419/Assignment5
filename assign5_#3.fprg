@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jimen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-28 10:49:05 PM"/>
+        <attribute name="created" value="amltZW47TEFQVE9QLU04MDc4UzFFOzIwMjEtMDItMjg7MTA6MDM6MjUgUE07MjgwNQ=="/>
+        <attribute name="edited" value="amltZW47TEFQVE9QLU04MDc4UzFFOzIwMjEtMDItMjg7MTA6NDk6MDUgUE07MTsyOTIx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="princamount" type="Real" array="False" size=""/>
+            <declare name="yearsmature" type="Integer" array="False" size=""/>
+            <declare name="interestrate" type="Real" array="False" size=""/>
+            <output expression="&quot;What is the amount of your principle?&quot;" newline="True"/>
+            <input variable="princamount"/>
+            <output expression="&quot;How many years to maturity?&quot;" newline="True"/>
+            <input variable="yearsmature"/>
+            <if expression="princamount &gt; 100000 and yearsmature = 5">
+                <then>
+                    <assign variable="interestrate" expression="0.06"/>
+                </then>
+                <else>
+                    <if expression="princamount &lt;= 100000 and princamount &gt;= 50000 and yearsmature = 10">
+                        <then>
+                            <assign variable="interestrate" expression="0.05"/>
+                        </then>
+                        <else>
+                            <if expression="princamount &lt;= 100000 and princamount &gt;= 50000 and yearsmature = 5">
+                                <then>
+                                    <assign variable="interestrate" expression="0.04"/>
+                                </then>
+                                <else>
+                                    <assign variable="interestrate" expression="0.02"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <declare name="firstyearint" type="Real" array="False" size=""/>
+            <assign variable="firstyearint" expression="princamount * interestrate"/>
+            <output expression="princamount &amp; &quot;,&quot; &amp; interestrate &amp; &quot;,&quot; &amp; firstyearint" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

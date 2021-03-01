@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jimen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-28 09:51:10 PM"/>
+        <attribute name="created" value="amltZW47TEFQVE9QLU04MDc4UzFFOzIwMjEtMDItMjg7MDk6MDg6NDUgUE07MjgyMA=="/>
+        <attribute name="edited" value="amltZW47TEFQVE9QLU04MDc4UzFFOzIwMjEtMDItMjg7MDk6NTE6MTAgUE07MTsyOTE4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="partnum" type="Integer" array="False" size=""/>
+            <declare name="unitcost" type="Real" array="False" size=""/>
+            <declare name="quantitypart" type="Real" array="False" size=""/>
+            <output expression="&quot;What part would you like to purchase?&quot;" newline="True"/>
+            <input variable="partnum"/>
+            <output expression="&quot;How many of that part would you like to purchase?&quot;" newline="True"/>
+            <input variable="quantitypart"/>
+            <if expression="partnum = 10 or partnum = 55">
+                <then>
+                    <assign variable="unitcost" expression="1.00"/>
+                </then>
+                <else>
+                    <if expression="partnum = 99">
+                        <then>
+                            <assign variable="unitcost" expression="2.00"/>
+                        </then>
+                        <else>
+                            <if expression="partnum = 80 or partnum = 70">
+                                <then>
+                                    <assign variable="unitcost" expression="3.00"/>
+                                </then>
+                                <else>
+                                    <assign variable="unitcost" expression="5.00"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <declare name="totalprice" type="Real" array="False" size=""/>
+            <assign variable="totalprice" expression="quantitypart * unitcost"/>
+            <output expression="partnum &amp; &quot;,&quot; &amp; unitcost &amp; &quot;,&quot; &amp; totalprice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

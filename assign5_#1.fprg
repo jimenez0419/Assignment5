@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jimen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-28 08:58:01 PM"/>
+        <attribute name="created" value="amltZW47TEFQVE9QLU04MDc4UzFFOzIwMjEtMDItMjg7MDY6MzI6MTAgUE07MjgwNg=="/>
+        <attribute name="edited" value="amltZW47TEFQVE9QLU04MDc4UzFFOzIwMjEtMDItMjg7MDg6NTg6MDEgUE07MTsyOTI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantitywidgets" type="Real" array="False" size=""/>
+            <declare name="pricewidgets" type="Real" array="False" size=""/>
+            <output expression="&quot;Please enter the quantity of widgets.&quot;" newline="True"/>
+            <input variable="quantitywidgets"/>
+            <if expression="quantitywidgets &gt; 10000">
+                <then>
+                    <assign variable="pricewidgets" expression="10"/>
+                </then>
+                <else>
+                    <if expression="quantitywidgets &lt;= 10000 &amp;&amp; quantitywidgets &gt;=5000">
+                        <then>
+                            <assign variable="pricewidgets" expression="20"/>
+                        </then>
+                        <else>
+                            <if expression="quantitywidgets &lt; 5000">
+                                <then>
+                                    <assign variable="pricewidgets" expression="30"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="totalprice" type="Real" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <assign variable="extprice" expression="quantitywidgets * pricewidgets"/>
+            <assign variable="tax" expression="extprice * 0.07"/>
+            <assign variable="totalprice" expression="extprice + tax"/>
+            <output expression="extprice &amp; &quot;,&quot; &amp; tax &amp; &quot;,&quot; &amp; totalprice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

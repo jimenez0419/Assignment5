@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="jimen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-28 11:21:45 PM"/>
+        <attribute name="created" value="amltZW47TEFQVE9QLU04MDc4UzFFOzIwMjEtMDItMjg7MTE6MDg6MzggUE07MjgxNQ=="/>
+        <attribute name="edited" value="amltZW47TEFQVE9QLU04MDc4UzFFOzIwMjEtMDItMjg7MTE6MjE6NDUgUE07MTsyOTE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numoftick" type="Integer" array="False" size=""/>
+            <declare name="tickprice" type="Real" array="False" size=""/>
+            <output expression="&quot;How many concert tickets will you be purchasing?&quot;" newline="True"/>
+            <input variable="numoftick"/>
+            <if expression="numoftick &gt;= 25">
+                <then>
+                    <assign variable="tickprice" expression="50"/>
+                </then>
+                <else>
+                    <if expression="numoftick &lt;= 24 and numoftick &gt;= 10">
+                        <then>
+                            <assign variable="tickprice" expression="60"/>
+                        </then>
+                        <else>
+                            <if expression="numoftick &lt;= 9 and numoftick &gt;= 5">
+                                <then>
+                                    <assign variable="tickprice" expression="70"/>
+                                </then>
+                                <else>
+                                    <assign variable="tickprice" expression="75"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <declare name="totalprice" type="Real" array="False" size=""/>
+            <assign variable="totalprice" expression="numoftick * tickprice"/>
+            <output expression="numoftick &amp; &quot;,&quot; &amp; tickprice &amp; &quot;,&quot; &amp; totalprice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
